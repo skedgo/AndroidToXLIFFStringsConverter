@@ -80,7 +80,7 @@ public class StringsGeneratorUtils {
 									String[] fileNameSplit = fileName.split("\\.");
 
 									try {
-										writeFile(destJavaStringPath + "/", fileNameSplit[0] + "_" + lang + ".xliff",
+										writeFile(destJavaStringPath+ "/" + lang + "/" , fileNameSplit[0] + ".xliff",
 												output);
 									} catch (IOException e) {
 										// TODO Auto-generated catch block
@@ -104,10 +104,7 @@ public class StringsGeneratorUtils {
 		}
 	}
 
-	private boolean skipLang(String langToCheck, List<String> langs) {
-
-		if (langToCheck.equals(DEFAULT_LANG))
-			return true;
+	private boolean skipLang(String langToCheck, List<String> langs) {		
 
 		for (String lang : langs) {
 			if (langToCheck.contains(lang)) {
